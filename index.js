@@ -25,8 +25,9 @@ app.use(express.json());
       subject: 'New Contact Details',
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
     };
-
+    console.log(name,"name");
     await transporter.sendMail(mailOptions, function (error, info) {
+
       if (error) {
         console.error('Error:', error);
       } else {
