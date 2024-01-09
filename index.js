@@ -9,28 +9,26 @@ app.use(cors({
   methods: 'POST',
   allowedHeaders: 'Content-Type',
 }));
- app.post('/send-email', async (req, res) => {
-//   try {
-    // Extract data from the request body sent by React
-    const { name, email, subject, message } = req.body;
 
-    // Send email using nodemailer or an email service API
+ app.post('/send-email', async (req, res) => {
+  try {
+    const { name, email, subject, message } = req.body;
     const transporter = nodemailer.createTransport({
       host: 'smtp-relay.brevo.com',
       port: '587',
       auth: {
         user: 'limimathew00@gmail.com',
-        pass: 'xsmtpsib-d5748481f9076a9fdffd797b4a5ffcf39954e1fe88014d84f641eb691e3aa229-ApamvTIdBXrEVkDJ',
+        pass: 'xsmtpsib-d5748481f9076a9fdffd797b4a5ffcf39954e1fe88014d84f641eb691e3aa229-bLKRjQfa38UInScG',
       },
     });
 
     const mailOptions = {
-      from: 'limimathew00@gmail.com',
+      from: email,
       to: 'limimathew00@gmail.com',
-      subject: 'New Contact Details',
+      subject: subject,
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
+      
     };
-    console.log(name,"name");
     await transporter.sendMail(mailOptions, function (error, info) {
 
       if (error) {
@@ -40,10 +38,10 @@ app.use(cors({
       }
     });
 
-//   } catch (error) {
-//     console.error('Error:', error);
-//     res.status(500).send('Internal Server Error');
-//   }
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
  });
 
 app.listen(port, () => {
