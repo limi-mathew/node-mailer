@@ -20,7 +20,7 @@ app.use(cors({
       port: '587',
       auth: {
         user: 'limimathew00@gmail.com',
-        pass: 'xsmtpsib-d5748481f9076a9fdffd797b4a5ffcf39954e1fe88014d84f641eb691e3aa229-X02JxGazmMfkTcVw',
+        pass: 'xsmtpsib-d5748481f9076a9fdffd797b4a5ffcf39954e1fe88014d84f641eb691e3aa229-7x5cJZX1VvjdBsap',
       },
     });
 
