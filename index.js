@@ -40,7 +40,7 @@ console.log("limi")
     const transporter = nodemailer.createTransport({
       host: 'smtp-relay.brevo.com',
       port: 587,
-      secure: false, // TLS (not SSL)
+      secure: true, // TLS (not SSL)
       auth: {
         user: '6a7081002@smtp-brevo.com',
         pass: '9zQ1hTWYPInOVGBJ',
