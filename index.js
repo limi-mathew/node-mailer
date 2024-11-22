@@ -51,7 +51,13 @@ console.log("limi")
         rejectUnauthorized: false, // Bypass self-signed certificate errors
       },
     });
-    
+    transporter.verify((error, success) => {
+      if (error) {
+        console.error('SMTP connection failed:', error);
+      } else {
+        console.log('SMTP is ready to send emails');
+      }
+    });
     
     await transporter.sendMail(mailOptions, function (error, info) {
       console.error('Error:', error);
@@ -67,13 +73,7 @@ console.log("limi")
     res.status(500).send('Internal Server Error');
   }
  });
- transporter.verify((error, success) => {
-  if (error) {
-    console.error('SMTP connection failed:', error);
-  } else {
-    console.log('SMTP is ready to send emails');
-  }
-});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
