@@ -31,8 +31,9 @@ app.use(cors({
       text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`,
       
     };
+    console.log(mailOptions,'mailOptions')
     await transporter.sendMail(mailOptions, function (error, info) {
-
+      console.error('Error:', error);
       if (error) {
         console.error('Error:', error);
       } else {
