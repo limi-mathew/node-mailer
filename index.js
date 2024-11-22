@@ -5,8 +5,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:5173/',
-  //origin: 'https://portfolio-7oif.onrender.com',
+  //origin: 'http://localhost:5173/',
+  origin: 'https://portfolio-7oif.onrender.com',
   methods: 'POST',
   allowedHeaders: 'Content-Type',
 }));
