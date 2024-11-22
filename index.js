@@ -11,7 +11,7 @@ app.use(cors({
 }));
  app.post('/send-email', async (req, res) => {
   console.log(res,"res");
-
+  console.log("LIMI")
   console.log(req,"requests");
 //   try {
     // Extract data from the request body sent by React
