@@ -45,6 +45,8 @@ console.log("limi")
         user: '6a7081002@smtp-brevo.com',
         pass: '9zQ1hTWYPInOVGBJ',
      },
+     logger: true, // Enable logging
+     debug: true,  // Show debug output
       tls: {
         rejectUnauthorized: false, // Bypass self-signed certificate errors
       },
