@@ -10,6 +10,7 @@ app.use(cors({
   allowedHeaders: 'Content-Type',
 }));
  app.post('/send-email', async (req, res) => {
+  console.log(req,"request");
 //   try {
     // Extract data from the request body sent by React
     const { name, email, subject, message } = req.body;
