@@ -42,8 +42,8 @@ console.log("limi")
       port: 587,
       secure: false, // TLS (not SSL)
       auth: {
-        user: '6a7081001@smtp-brevo.com',
-        pass: 'g9OZfrHWnQVIj7NT',
+        user: '6a7081002@smtp-brevo.com',
+        pass: '9zQ1hTWYPInOVGBJ',
      },
       tls: {
         rejectUnauthorized: false, // Bypass self-signed certificate errors
